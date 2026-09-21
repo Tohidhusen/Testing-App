@@ -1,17 +1,18 @@
 package com.TestingApp.test.Service;
 
+import com.TestingApp.test.DTO.EmployeeDTO;
 import com.TestingApp.test.Entity.Employee;
 
 import java.util.List;
 
 public interface EmployeeService {
-    Employee createEmployee(Employee employee);
+    EmployeeDTO createEmployee(EmployeeDTO employee);
 
-    List<Employee> getAllEmployees();
+    List<EmployeeDTO> getAllEmployees();
 
-    Employee getEmployeeById(Long id);
+    EmployeeDTO getEmployeeById(Long id);
 
-    Employee updateEmployee(Long id, Employee employee);
+    EmployeeDTO updateEmployee(Long id, EmployeeDTO employeeDTO);
 
     void deleteEmployee(Long id);
 }
