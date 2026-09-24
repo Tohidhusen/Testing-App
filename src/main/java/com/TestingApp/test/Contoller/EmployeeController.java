@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/employees")
+@RequestMapping("/employee")
 public class EmployeeController {
 
     private final EmployeeService employeeService;
@@ -25,7 +25,7 @@ public class EmployeeController {
     public ResponseEntity<EmployeeDTO> createEmployee(
             @RequestBody EmployeeDTO employeeDTO) {
 
-        EmployeeDTO created = employeeService.createEmployee(employeeDTO);
+            EmployeeDTO created = employeeService.createEmployee(employeeDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(created);
     }
 

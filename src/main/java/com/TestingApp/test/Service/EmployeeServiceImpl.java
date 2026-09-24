@@ -2,6 +2,7 @@ package com.TestingApp.test.Service;
 import com.TestingApp.test.DTO.EmployeeDTO;
 import com.TestingApp.test.Entity.Employee;
 import com.TestingApp.test.Repository.EmployeeRepository;
+import com.TestingApp.test.advice.ResourceNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
@@ -54,7 +55,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         Employee employee = employeeRepository.findById(id)
                 .orElseThrow(() -> {
                     log.error("Employee not found with id: {}", id);
-                    return new RuntimeException("Employee not found");
+                    return new ResourceNotFoundException();
                 });
 
         log.info("Employee found: {}", employee.getName());
